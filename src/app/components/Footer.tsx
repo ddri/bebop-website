@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import { Github, Twitter, DiscIcon as Discord } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -7,57 +7,48 @@ export default function Footer() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">Bebop CMS</h3>
-            <p className="text-sm">Harmonizing content management since 2023</p>
+            <h3 className="text-lg font-semibold mb-4">Bebop</h3>
+            <p className="text-sm">Open source content management for the modern web</p>
           </div>
           <div>
-            <h4 className="text-lg font-semibold mb-4">Product</h4>
+            <h4 className="text-lg font-semibold mb-4">Project</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#features">Features</Link>
+                <Link href="https://github.com/ddri/bebop">GitHub</Link>
               </li>
               <li>
-                <Link href="#pricing">Pricing</Link>
+                <Link href="https://docs.bebop.sh">Documentation</Link>
               </li>
               <li>
-                <Link href="#">Documentation</Link>
+                <Link href="https://github.com/bebop-cms/bebop/releases">Releases</Link>
               </li>
             </ul>
           </div>
           <div>
-            <h4 className="text-lg font-semibold mb-4">Company</h4>
+            <h4 className="text-lg font-semibold mb-4">Community</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#">About Us</Link>
+                <Link href="https://github.com/ddri/bebop/blob/main/CONTRIBUTING.md">Contributing</Link>
               </li>
               <li>
-                <Link href="#">Careers</Link>
-              </li>
-              <li>
-                <Link href="#">Contact</Link>
+                <Link href="https://bsky.app/profile/davidryan.bsky.social">Twitter</Link>
               </li>
             </ul>
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4">Connect</h4>
             <div className="flex space-x-4">
-              <Link href="#" aria-label="Facebook">
-                <Facebook />
+              <Link href="https://github.com/ddri/bebop" aria-label="GitHub">
+                <Github className="h-6 w-6" />
               </Link>
-              <Link href="#" aria-label="Twitter">
-                <Twitter />
-              </Link>
-              <Link href="#" aria-label="Instagram">
-                <Instagram />
-              </Link>
-              <Link href="#" aria-label="LinkedIn">
-                <Linkedin />
+              <Link href="https://bsky.app/profile/davidryan.bsky.social" aria-label="Twitter">
+                <Twitter className="h-6 w-6" />
               </Link>
             </div>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
-          <p className="text-sm">&copy; {new Date().getFullYear()} Bebop CMS. All rights reserved.</p>
+          <p className="text-sm">&copy; {new Date().getFullYear()} Bebop CMS. Released under the AGPL-3.0 license.</p>
         </div>
       </div>
     </footer>
