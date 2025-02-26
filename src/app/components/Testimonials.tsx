@@ -2,14 +2,14 @@ import Image from "next/image"
 
 const testimonials = [
   {
-    quote: "Bebop's developer experience is outstanding. The plugin API is a joy to work with.",
-    author: "Sarah Chen",
+    quote: "Bebop's developer experience is fantastic. We've been building our custom workflow on top of the alpha and love it already.",
+    author: "Sarah Choo",
     role: "Open Source Contributor",
   },
   {
-    quote: "Finally, a CMS that doesn't get in the way of modern development practices.",
-    author: "Marcus Rodriguez",
-    role: "Core Maintainer",
+    quote: "Happy there's finally a CMS that caters to content strategies using external content sites, community blogs, social media APIs, etc.",
+    author: "Liam Miller",
+    role: "Content Strategist",
   },
 ]
 

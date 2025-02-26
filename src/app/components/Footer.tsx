@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-lg font-semibold mb-4">Bebop</h3>
-            <p className="text-sm">Open source content management for the modern web</p>
+            <p className="text-sm">Open source content management for the modern content campaign creator. Write once. Publish everywhere. Track everything.</p>
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4">Project</h4>
@@ -20,7 +20,7 @@ export default function Footer() {
                 <Link href="https://docs.bebop.sh">Documentation</Link>
               </li>
               <li>
-                <Link href="https://github.com/bebop-cms/bebop/releases">Releases</Link>
+                <Link href="https://github.com/ddri/bebop/releases">Releases</Link>
               </li>
             </ul>
           </div>

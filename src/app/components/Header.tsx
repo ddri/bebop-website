@@ -23,12 +23,13 @@ export default function Header() {
             GitHub
           </Link>
         </nav>
-        <Button className="flex items-center gap-2">
-          <Github className="h-4 w-4" />
-          <span>Star on GitHub</span>
-        </Button>
+        <Link href="https://github.com/ddri/bebop" className="flex items-center gap-2">
+          <Button>
+            <Github className="h-4 w-4" />
+            <span>Star on GitHub</span>
+          </Button>
+        </Link>
       </div>
     </header>
   )
 }
-
