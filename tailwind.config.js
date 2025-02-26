@@ -20,7 +20,8 @@ module.exports = {
       colors: {
         "light-grey": "#3d3d3a",
         "dark-grey": "#2f2f2d",
-        pink: "#E669E8",
+        pink: "hsl(348, 30%, 75%)", // Eraser pink
+        "soft-pink": "hsl(348, 30%, 85%)", // Lighter eraser pink
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

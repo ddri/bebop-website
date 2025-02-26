@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Button } from "./ui/button"
+import { Github } from "lucide-react"
 
 export default function Header() {
   return (
@@ -12,16 +13,23 @@ export default function Header() {
           <Link href="#features" className="text-foreground hover:text-primary">
             Features
           </Link>
-          <Link href="#testimonials" className="text-foreground hover:text-primary">
-            Testimonials
+          <Link href="https://docs.bebop.sh" className="text-foreground hover:text-primary">
+            Documentation
           </Link>
-          <Link href="#pricing" className="text-foreground hover:text-primary">
-            Pricing
+          <Link href="#community" className="text-foreground hover:text-primary">
+            Community
+          </Link>
+          <Link href="https://github.com/bebop-cms/bebop" className="text-foreground hover:text-primary">
+            GitHub
           </Link>
         </nav>
-        <Button>Try for Free</Button>
+        <Link href="https://github.com/ddri/bebop" className="flex items-center gap-2">
+          <Button>
+            <Github className="h-4 w-4" />
+            <span>Star on GitHub</span>
+          </Button>
+        </Link>
       </div>
     </header>
   )
 }
-
