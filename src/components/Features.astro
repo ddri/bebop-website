@@ -1,0 +1,43 @@
+---
+import { Code2, Puzzle, Zap, Lock } from 'lucide-astro';
+
+const features = [
+  {
+    icon: Code2,
+    title: "Developer First",
+    description: "Built with TypeScript and React, Bebop integrates seamlessly with your modern development workflow.",
+  },
+  {
+    icon: Puzzle,
+    title: "Extensible",
+    description: "Create custom plugins and extend functionality with a powerful, well-documented API.",
+  },
+  {
+    icon: Zap,
+    title: "Lightning Fast",
+    description: "Optimized for speed with static site generation and incremental builds.",
+  },
+  {
+    icon: Lock,
+    title: "Self-hosted",
+    description: "Keep full control of your data by hosting Bebop on your own infrastructure.",
+  },
+];
+---
+
+<section id="features" class="w-full py-20 bg-gray-50">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-12">Why Choose Bebop?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {features.map((feature) => (
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="mb-4">
+            <feature.icon class="h-10 w-10 text-primary" />
+          </div>
+          <h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
+          <p class="text-gray-600">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

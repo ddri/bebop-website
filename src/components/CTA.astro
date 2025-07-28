@@ -1,0 +1,27 @@
+---
+import { Github } from 'lucide-astro';
+---
+
+<section id="community" class="relative w-full py-20 overflow-hidden">
+  <!-- Base color layer -->
+  <div
+    class="absolute inset-0"
+    style="background-color: hsl(348, 30%, 75%);"
+  ></div>
+
+  <div class="absolute inset-0 texture-noise mix-blend-overlay"></div>
+
+  <!-- Content -->
+  <div class="container mx-auto text-center relative z-10">
+    <h2 class="text-3xl font-bold mb-6 text-dark-grey">Join Our Community</h2>
+    <p class="text-xl mb-8 max-w-2xl mx-auto text-dark-grey">
+      Bebop is built by content people for content people. Contribute, share ideas, and help shape the future of content management.
+    </p>
+    <div class="flex gap-4 justify-center">
+      <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-11 px-8 gap-2 bg-dark-grey text-dark-grey hover:bg-dark-grey/90">
+        <Github class="h-5 w-5" />
+        Contribute
+      </button>
+    </div>
+  </div>
+</section>
