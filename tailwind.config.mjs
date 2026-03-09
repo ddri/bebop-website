@@ -10,6 +10,10 @@ export default {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      serif: ['Lora', 'Georgia', 'serif'],
+      sans: ['Inter', 'system-ui', 'sans-serif'],
+    },
     extend: {
       colors: {
         "light-grey": "#3d3d3a",
