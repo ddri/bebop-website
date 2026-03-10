@@ -2,7 +2,7 @@
 import { Github } from 'lucide-astro';
 ---
 
-<section id="community" class="relative w-full py-20 overflow-hidden">
+<section class="relative w-full py-20 overflow-hidden">
   <!-- Base color layer -->
   <div
     class="absolute inset-0"
@@ -13,15 +13,22 @@ import { Github } from 'lucide-astro';
 
   <!-- Content -->
   <div class="container mx-auto text-center relative z-10">
-    <h2 class="text-3xl font-bold mb-6 text-white">Join Our Community</h2>
-    <p class="text-xl mb-8 max-w-2xl mx-auto text-white">
-      Bebop is built by content people for content people. Contribute, share ideas, and help shape the future of content management.
+    <h2 class="text-3xl font-bold mb-6 text-white">Built for content people.</h2>
+    <p class="text-xl mb-8 max-w-2xl mx-auto text-gray-300 leading-relaxed">
+      Bebop is open source and in early access. We're building the platform we wish existed for managing content campaigns.
     </p>
     <div class="flex gap-4 justify-center">
-      <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 px-8 gap-2 bg-pink text-dark-grey hover:bg-pink/90">
-        <Github class="h-5 w-5" />
-        Contribute
-      </button>
+      <a href="#waitlist">
+        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 px-8 bg-pink text-dark-grey hover:bg-pink/90">
+          Request Access
+        </button>
+      </a>
+      <a href="https://github.com/ddri/bebop">
+        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 px-8 gap-2 border border-white/30 text-white hover:bg-white/10">
+          <Github class="h-5 w-5" />
+          View on GitHub
+        </button>
+      </a>
     </div>
   </div>
 </section>
