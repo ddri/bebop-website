@@ -1,7 +1,8 @@
 ---
+import { Menu, X } from 'lucide-astro';
 ---
 
-<header class="w-full py-4 px-6 bg-background">
+<header class="w-full py-4 px-6 bg-background relative">
   <div class="container mx-auto flex justify-between items-center">
     <a href="/" class="text-2xl font-bold text-primary">
       Bebop
@@ -20,10 +21,64 @@
         GitHub
       </a>
     </nav>
-    <a href="#waitlist">
-      <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
-        Request Access
+    <div class="flex items-center gap-3">
+      <a href="#waitlist" class="hidden md:inline-flex">
+        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+          Request Access
+        </button>
+      </a>
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 text-foreground hover:text-primary"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Toggle menu"
+      >
+        <Menu id="menu-icon-open" class="w-6 h-6" />
+        <X id="menu-icon-close" class="w-6 h-6 hidden" />
       </button>
-    </a>
+    </div>
   </div>
+
+  <nav
+    id="mobile-menu"
+    class="hidden absolute left-0 right-0 top-full bg-background border-t border-gray-200 shadow-lg z-50 md:hidden"
+  >
+    <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+      <a href="#features" class="mobile-nav-link text-foreground hover:text-primary py-2">Features</a>
+      <a href="#how-it-works" class="mobile-nav-link text-foreground hover:text-primary py-2">How It Works</a>
+      <a href="https://docs.bebop.sh" class="mobile-nav-link text-foreground hover:text-primary py-2">Documentation</a>
+      <a href="https://github.com/ddri/bebop" class="mobile-nav-link text-foreground hover:text-primary py-2">GitHub</a>
+      <a href="#waitlist" class="mobile-nav-link">
+        <button class="w-full inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+          Request Access
+        </button>
+      </a>
+    </div>
+  </nav>
 </header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  function toggleMenu() {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+    btn?.setAttribute('aria-expanded', String(!isOpen));
+  }
+
+  btn?.addEventListener('click', toggleMenu);
+
+  document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (!menu?.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    });
+  });
+</script>
