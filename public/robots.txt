@@ -43,4 +43,4 @@ Disallow: /
 User-agent: DotBot
 Disallow: /
 
-Sitemap: https://bebop-website.vercel.app/sitemap.xml
+Sitemap: https://bebopcms.com/sitemap.xml

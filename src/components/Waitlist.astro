@@ -10,6 +10,12 @@ import { Mail, User, MessageSquare } from 'lucide-astro';
     </p>
 
     <form id="waitlist-form" class="space-y-4">
+      <!-- Honeypot field — hidden from real users, filled by bots -->
+      <div class="absolute opacity-0 top-0 left-0 h-0 w-0 -z-10 overflow-hidden" aria-hidden="true">
+        <label for="waitlist-website">Website</label>
+        <input type="text" id="waitlist-website" name="website" tabindex="-1" autocomplete="off" />
+      </div>
+
       <div>
         <label for="waitlist-name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
         <div class="relative">
@@ -90,6 +96,14 @@ import { Mail, User, MessageSquare } from 'lucide-astro';
     const name = (document.getElementById('waitlist-name') as HTMLInputElement).value.trim();
     const email = (document.getElementById('waitlist-email') as HTMLInputElement).value.trim();
     const reason = (document.getElementById('waitlist-reason') as HTMLTextAreaElement).value.trim();
+    const website = (document.getElementById('waitlist-website') as HTMLInputElement).value;
+
+    // Honeypot: if the hidden field is filled, silently fake success
+    if (website) {
+      form.classList.add('hidden');
+      successEl.classList.remove('hidden');
+      return;
+    }
 
     try {
       const res = await fetch('https://app.bebopcms.com/api/waitlist', {

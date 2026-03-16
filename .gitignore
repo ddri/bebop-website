@@ -1,6 +1,9 @@
 # macOS
-
 .DS_Store
+
+# Astro
+dist/
+.astro/
 
 # Dependency directories
 node_modules/
