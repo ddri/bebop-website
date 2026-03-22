@@ -1,24 +1,13 @@
 # Bebop Website
 
-Marketing website for the [Bebop CMS](https://github.com/ddri/bebop) - an opinionated and open source CMS built for content campaigns.
+Marketing site for [Bebop](https://bebopcms.com) — a content marketing platform for creators and teams.
 
-## Tech Stack
-
-- **Astro** - Static site generator
-- **Tailwind CSS** - Styling
-- **TypeScript** - Type safety
-- **Lucide** - Icons
-
-## Development
+## Setup
 
 ```bash
 npm install
-npm run dev    # Start dev server
-npm run build  # Build for production
+npm run dev
+npm run build
 ```
 
-## Deployment
-
-Deploys automatically to Vercel on push to main branch.
-
-Built with ❤️ for the content community.
+Astro + Tailwind CSS + Lucide icons. Deploys to Vercel on push to main.
