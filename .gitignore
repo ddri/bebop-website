@@ -40,6 +40,12 @@ yarn-error.log*
 # Vercel
 .vercel
 
+# Claude Code local state
+.claude/
+
+# Playwright MCP artifacts
+.playwright-mcp/
+
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
