@@ -112,7 +112,7 @@ import { Mail, User, MessageSquare } from '@lucide/astro';
         body: JSON.stringify({ name, email, ...(reason && { reason }) }),
       });
 
-      if (res.status === 201) {
+      if (res.ok || res.status === 201) {
         form.classList.add('hidden');
         successEl.classList.remove('hidden');
       } else {

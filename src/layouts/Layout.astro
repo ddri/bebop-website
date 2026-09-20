@@ -17,7 +17,14 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={Astro.url.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Bebop is a content marketing platform for creators and teams. Create campaigns, collaborate in real time, and publish everywhere." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content="Bebop is a content marketing platform for creators and teams. Create campaigns, collaborate in real time, and publish everywhere." />
     <title>{title}</title>
   </head>
   <body>
