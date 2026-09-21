@@ -9,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark" style="color-scheme: dark;">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Bebop is a content marketing platform for creators and teams. Create campaigns, collaborate in real time, and publish everywhere." />
@@ -39,12 +39,15 @@ const { title } = Astro.props;
   html {
     font-family: 'Inter', system-ui, sans-serif;
     scroll-behavior: smooth;
-    background-color: #FAFAF9;
+    background-color: #0C0A09;
+    color: #FAFAF9;
   }
 
   body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    background-color: #0C0A09;
+    color: #FAFAF9;
   }
 </style>

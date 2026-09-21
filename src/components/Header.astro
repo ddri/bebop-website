@@ -2,7 +2,7 @@
 import { Menu, X } from '@lucide/astro';
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-stone-200/70 bg-[#FAFAF9]/85 backdrop-blur-md">
+<header class="sticky top-0 z-50 w-full border-b border-stone-800/80 bg-[#0C0A09]/85 backdrop-blur-md">
   <div class="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
     <div class="flex items-center gap-3">
       <a href="/" class="flex items-center gap-2 group">
@@ -13,23 +13,23 @@ import { Menu, X } from '@lucide/astro';
             <circle cx="18" cy="16" r="3"></circle>
           </svg>
         </span>
-        <span class="text-xl font-bold font-serif tracking-tight text-stone-900">
+        <span class="text-xl font-bold font-serif tracking-tight text-white">
           Bebop
         </span>
       </a>
-      <span class="hidden sm:inline-flex items-center text-[11px] font-medium px-2 py-0.5 rounded-full bg-stone-200/70 text-stone-600">
+      <span class="hidden sm:inline-flex items-center text-[11px] font-medium px-2 py-0.5 rounded-full bg-stone-800/90 border border-stone-700/60 text-stone-300">
         Beta
       </span>
     </div>
 
-    <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-600">
-      <a href="#features" class="hover:text-stone-900 transition-colors">
+    <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-400">
+      <a href="#features" class="hover:text-white transition-colors">
         Features
       </a>
-      <a href="#how-it-works" class="hover:text-stone-900 transition-colors">
+      <a href="#how-it-works" class="hover:text-white transition-colors">
         How It Works
       </a>
-      <a href="#open-source" class="hover:text-stone-900 transition-colors">
+      <a href="#open-source" class="hover:text-white transition-colors">
         Open Source
       </a>
     </nav>
@@ -39,7 +39,7 @@ import { Menu, X } from '@lucide/astro';
         href="https://github.com/ddri/bebop"
         target="_blank"
         rel="noopener noreferrer"
-        class="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium text-stone-600 hover:text-stone-900 px-3 py-1.5 rounded-md hover:bg-stone-200/50 transition-colors"
+        class="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium text-stone-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-stone-800/60 transition-colors"
       >
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
         <span>Star on GitHub</span>
@@ -47,14 +47,14 @@ import { Menu, X } from '@lucide/astro';
 
       <a
         href="#waitlist"
-        class="inline-flex items-center justify-center whitespace-nowrap rounded-full text-xs font-semibold tracking-wide transition-all bg-stone-900 text-stone-50 hover:bg-stone-800 h-9 px-4 shadow-xs"
+        class="inline-flex items-center justify-center whitespace-nowrap rounded-full text-xs font-semibold tracking-wide transition-all bg-white text-stone-950 hover:bg-stone-200 h-9 px-4 shadow-sm"
       >
         Request Access
       </a>
 
       <button
         id="mobile-menu-btn"
-        class="md:hidden p-2 text-stone-700 hover:text-stone-900 rounded-md"
+        class="md:hidden p-2 text-stone-300 hover:text-white rounded-md"
         aria-expanded="false"
         aria-controls="mobile-menu"
         aria-label="Toggle menu"
@@ -67,16 +67,16 @@ import { Menu, X } from '@lucide/astro';
 
   <nav
     id="mobile-menu"
-    class="hidden absolute left-0 right-0 top-full bg-[#FAFAF9] border-b border-stone-200 shadow-lg z-50 md:hidden"
+    class="hidden absolute left-0 right-0 top-full bg-[#0C0A09] border-b border-stone-800 shadow-2xl z-50 md:hidden"
   >
     <div class="px-6 py-5 flex flex-col space-y-4 text-sm font-medium">
-      <a href="#features" class="mobile-nav-link text-stone-700 hover:text-stone-900 py-1">Features</a>
-      <a href="#how-it-works" class="mobile-nav-link text-stone-700 hover:text-stone-900 py-1">How It Works</a>
-      <a href="#open-source" class="mobile-nav-link text-stone-700 hover:text-stone-900 py-1">Open Source</a>
-      <a href="https://github.com/ddri/bebop" class="mobile-nav-link text-stone-700 hover:text-stone-900 py-1">GitHub</a>
+      <a href="#features" class="mobile-nav-link text-stone-300 hover:text-white py-1">Features</a>
+      <a href="#how-it-works" class="mobile-nav-link text-stone-300 hover:text-white py-1">How It Works</a>
+      <a href="#open-source" class="mobile-nav-link text-stone-300 hover:text-white py-1">Open Source</a>
+      <a href="https://github.com/ddri/bebop" class="mobile-nav-link text-stone-300 hover:text-white py-1">GitHub</a>
       <a
         href="#waitlist"
-        class="mobile-nav-link w-full text-center inline-flex items-center justify-center whitespace-nowrap rounded-full text-xs font-semibold bg-stone-900 text-stone-50 hover:bg-stone-800 h-10 px-4"
+        class="mobile-nav-link w-full text-center inline-flex items-center justify-center whitespace-nowrap rounded-full text-xs font-semibold bg-white text-stone-950 hover:bg-stone-200 h-10 px-4"
       >
         Request Access
       </a>

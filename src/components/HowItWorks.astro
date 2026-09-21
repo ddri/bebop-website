@@ -23,36 +23,36 @@ const steps = [
 ];
 ---
 
-<section id="how-it-works" class="w-full py-24 border-t border-stone-200/80 bg-white">
+<section id="how-it-works" class="w-full py-24 border-t border-stone-800/80 bg-[#0C0A09]">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center max-w-xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-100 text-stone-700 text-xs font-semibold uppercase tracking-wider mb-4">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-900 border border-stone-800 text-stone-300 text-xs font-semibold uppercase tracking-wider mb-4">
         Workflow
       </div>
-      <h2 class="text-3xl sm:text-4xl font-bold text-stone-900 mb-4">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
         How Bebop fits your process.
       </h2>
-      <p class="text-stone-600 text-base sm:text-lg leading-relaxed">
+      <p class="text-stone-400 text-base sm:text-lg leading-relaxed">
         From early outline to multi-platform delivery in three coordinated steps.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
       {steps.map((item) => (
-        <div class="relative bg-stone-50/60 rounded-2xl border border-stone-200/80 p-8 flex flex-col justify-between hover:border-pink/30 hover:bg-stone-50 transition-all group">
+        <div class="relative bg-[#141211] rounded-2xl border border-stone-800 p-8 flex flex-col justify-between hover:border-pink/40 hover:bg-[#181615] transition-all group">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-mono text-xs font-bold text-pink px-2.5 py-1 rounded-full bg-pink/10">
+              <span class="font-mono text-xs font-bold text-pink px-2.5 py-1 rounded-full bg-pink/15">
                 {item.step}
               </span>
-              <div class="w-10 h-10 rounded-xl bg-white border border-stone-200 flex items-center justify-center text-stone-700 group-hover:text-pink transition-colors shadow-2xs">
+              <div class="w-10 h-10 rounded-xl bg-[#1C1A18] border border-stone-700/80 flex items-center justify-center text-stone-300 group-hover:text-pink transition-colors shadow-2xs">
                 <item.icon class="w-5 h-5" />
               </div>
             </div>
-            <h3 class="text-lg font-bold text-stone-900 mb-2.5">
+            <h3 class="text-lg font-bold text-white mb-2.5">
               {item.title}
             </h3>
-            <p class="text-sm text-stone-600 leading-relaxed">
+            <p class="text-sm text-stone-400 leading-relaxed">
               {item.description}
             </p>
           </div>
