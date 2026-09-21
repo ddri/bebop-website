@@ -1,34 +1,83 @@
 ---
-const testimonials = [
-  {
-    quote: "Managing a content campaign across Hashnode, Dev.to, and Bluesky used to mean juggling three tabs and hoping nothing fell through the cracks. Bebop makes it one workflow.",
-    author: "Sarah Choo",
-    role: "Open Source Contributor",
-  },
-  {
-    quote: "Finally a platform that thinks in campaigns, not just posts. The scheduling and multi-platform publishing have changed how our team plans content launches.",
-    author: "Liam Miller",
-    role: "Content Strategist",
-  },
-];
+import { ShieldCheck, LockOpen, Terminal } from '@lucide/astro';
 ---
 
-<section id="testimonials" class="w-full py-20 bg-white">
-  <div class="container mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-12">Community Feedback</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {testimonials.map((testimonial) => (
-        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-          <p class="text-lg mb-4 leading-relaxed italic">"{testimonial.quote}"</p>
-          <div class="flex items-center">
-            <div class="w-10 h-10 rounded-full bg-pink text-white flex items-center justify-center font-serif font-bold text-sm mr-4">{testimonial.author.charAt(0)}</div>
-            <div>
-              <p class="font-semibold">{testimonial.author}</p>
-              <p class="text-sm text-gray-600">{testimonial.role}</p>
+<section id="open-source" class="w-full py-24 border-t border-stone-200/80 bg-stone-50/50">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="bg-white rounded-3xl border border-stone-200 p-8 sm:p-12 shadow-xs">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <!-- Left Column: Manifesto -->
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-100 text-stone-700 text-xs font-semibold uppercase tracking-wider mb-4">
+            Open Source Philosophy
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-stone-900 mb-5 leading-tight">
+            Content tools should never lock you in.
+          </h2>
+          <p class="text-stone-600 text-base leading-relaxed mb-6">
+            Bebop is built in the open. Your content campaigns belong to you — stored in clean Markdown, synchronized through open APIs, and completely independent of proprietary editor silos.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="https://github.com/ddri/bebop"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-stone-900 text-white hover:bg-stone-800 text-sm font-semibold transition-colors shadow-2xs"
+            >
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>Explore the Repository</span>
+            </a>
+            <a
+              href="https://github.com/ddri/bebop/releases"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-stone-200 bg-white text-stone-700 hover:bg-stone-50 text-sm font-medium transition-colors"
+            >
+              <span>Releases & Changelog</span>
+              <span class="text-stone-400">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Guarantees -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="p-4 rounded-xl bg-stone-50 border border-stone-200/80">
+            <div class="flex items-start gap-3">
+              <div class="p-2 rounded-lg bg-pink/10 text-pink shrink-0 mt-0.5">
+                <LockOpen class="w-4 h-4" />
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-stone-900 mb-1">Standard Markdown & Frontmatter</h4>
+                <p class="text-xs text-stone-600 leading-relaxed">Everything is portable. Export your campaign assets anytime with no format lock-in.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-stone-50 border border-stone-200/80">
+            <div class="flex items-start gap-3">
+              <div class="p-2 rounded-lg bg-emerald-50 text-emerald-600 shrink-0 mt-0.5">
+                <ShieldCheck class="w-4 h-4" />
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-stone-900 mb-1">Audited & Transparent</h4>
+                <p class="text-xs text-stone-600 leading-relaxed">Regular dependency audits, open security disclosures, and strict privacy by design.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-stone-50 border border-stone-200/80">
+            <div class="flex items-start gap-3">
+              <div class="p-2 rounded-lg bg-purple-50 text-purple-600 shrink-0 mt-0.5">
+                <Terminal class="w-4 h-4" />
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-stone-900 mb-1">Hosted Cloud or Self-Hosted</h4>
+                <p class="text-xs text-stone-600 leading-relaxed">Use our high-speed managed cloud beta, or run the open stack in your own infrastructure.</p>
+              </div>
             </div>
           </div>
         </div>
-      ))}
+      </div>
     </div>
   </div>
 </section>

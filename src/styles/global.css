@@ -18,10 +18,13 @@
   --font-serif: Lora, Georgia, serif;
   --font-sans: Inter, system-ui, sans-serif;
 
-  --color-light-grey: #3d3d3a;
-  --color-dark-grey: #2f2f2d;
-  --color-pink: hsl(348, 30%, 75%);
-  --color-soft-pink: hsl(348, 30%, 85%);
+  --color-paper: #FAFAF9;
+  --color-paper-subtle: #F5F5F4;
+  --color-dark-grey: #1C1917;
+  --color-stone-body: #57534E;
+  --color-pink: hsl(348, 85%, 62%);
+  --color-soft-pink: hsl(348, 85%, 96%);
+
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
@@ -68,45 +71,36 @@
     from {
       height: var(--radix-accordion-content-height);
     }
-    to {
-      height: 0;
-    }
   }
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+    border-color: var(--color-stone-200, currentColor);
   }
 }
 
 @utility texture-noise {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.25;
+  opacity: 0.18;
 }
 
 @utility texture-dots {
   background-image:
-    radial-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px),
-    radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-  background-size:
-    20px 20px,
-    10px 10px;
-  background-position:
-    0 0,
-    10px 10px;
+    radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0;
+}
+
+@utility editor-frame-shadow {
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 8px 16px -4px rgba(0, 0, 0, 0.06),
+    0 24px 48px -12px rgba(0, 0, 0, 0.12);
 }
 
 @layer utilities {
@@ -160,62 +154,64 @@
   }
 
   :root {
-    --light-grey: 60 1% 48%;
-    --dark-grey: 60 2% 18%;
-    /* More muted, eraser-like pink */
-    --pink: 348 30% 75%;
-    --soft-pink: 348 30% 85%;
-    --white: 0 0% 100%;
+    --background: 60 9% 98%; /* #FAFAF9 */
+    --foreground: 24 10% 10%; /* #1C1917 */
 
-    --background: var(--white);
-    --foreground: var(--dark-grey);
+    --card: 0 0% 100%;
+    --card-foreground: 24 10% 10%;
 
-    --primary: var(--pink);
-    --primary-foreground: var(--dark-grey);
+    --primary: 348 85% 60%; /* #f43f5e vibrant brand rose */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: var(--light-grey);
-    --secondary-foreground: var(--white);
+    --secondary: 60 5% 96%;
+    --secondary-foreground: 24 10% 10%;
 
     --muted: 60 5% 96%;
-    --muted-foreground: 60 1% 48%;
+    --muted-foreground: 25 5% 45%;
 
-    --accent: var(--light-grey);
-    --accent-foreground: var(--white);
+    --accent: 348 85% 96%;
+    --accent-foreground: 348 85% 50%;
 
-    --border: 60 1% 85%;
-    --input: 60 1% 85%;
-    --ring: 348 30% 75%;
-    --radius: 0.5rem;
+    --border: 60 5% 90%;
+    --input: 60 5% 90%;
+    --ring: 348 85% 60%;
+    --radius: 0.625rem;
   }
 
   .dark {
-    --background: var(--dark-grey);
-    --foreground: var(--white);
+    --background: 24 10% 10%;
+    --foreground: 60 9% 98%;
 
-    --primary: var(--pink);
-    --primary-foreground: var(--dark-grey);
+    --card: 24 10% 13%;
+    --card-foreground: 60 9% 98%;
 
-    --secondary: var(--light-grey);
-    --secondary-foreground: var(--white);
+    --primary: 348 85% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --muted: 60 2% 28%;
-    --muted-foreground: 60 5% 84%;
+    --secondary: 24 10% 16%;
+    --secondary-foreground: 60 9% 98%;
 
-    --accent: var(--light-grey);
-    --accent-foreground: var(--white);
+    --muted: 24 10% 16%;
+    --muted-foreground: 60 5% 65%;
 
-    --border: 60 2% 28%;
-    --input: 60 2% 28%;
-    --ring: 348 30% 75%;
+    --accent: 348 85% 20%;
+    --accent-foreground: 348 85% 75%;
+
+    --border: 24 10% 20%;
+    --input: 24 10% 20%;
+    --ring: 348 85% 60%;
   }
 }
 
 @layer base {
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--color-paper);
+    color: var(--color-foreground);
     font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3 {
+  h1, h2, h3, h4 {
     font-family: var(--font-serif);
+    letter-spacing: -0.02em;
   }
 }
