@@ -1,58 +1,55 @@
 ---
-import { FolderPlus, PenLine, Radio } from '@lucide/astro';
+import { GitBranch, Eye, Send } from '@lucide/astro';
 
 const steps = [
   {
     step: "01",
-    icon: FolderPlus,
-    title: "Structure your campaign",
-    description: "Define your launch scope, target platforms, and content sequence. Keep every draft, asset, and thread together in one view.",
+    icon: GitBranch,
+    title: "Compose in Markdown",
+    description: "Write in standard Markdown with YAML frontmatter. Organize your launch assets, code snippets, and release timeline together.",
   },
   {
     step: "02",
-    icon: PenLine,
-    title: "Draft & co-write with your team",
-    description: "Write in a focused Markdown environment. Invite team members to collaborate in real-time with live presence and zero merge conflicts.",
+    icon: Eye,
+    title: "Inspect Payload Diffs",
+    description: "Preview exact platform adaptations before publishing: Hashnode drafts, Dev.to canonical headers, Beehiiv email templates, and Bluesky thread splits.",
   },
   {
     step: "03",
-    icon: Radio,
-    title: "Broadcast to every channel",
-    description: "Select channels, review platform-specific adaptations, and schedule. Bebop handles delivery, retries, and analytics.",
+    icon: Send,
+    title: "Automated Dispatch & Retries",
+    description: "Publish immediately or queue across coordinated release windows. Background workers handle API retries, rate limits, and status monitoring.",
   },
 ];
 ---
 
 <section id="how-it-works" class="w-full py-24 border-t border-stone-800/80 bg-[#0C0A09]">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center max-w-xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-900 border border-stone-800 text-stone-300 text-xs font-semibold uppercase tracking-wider mb-4">
-        Workflow
-      </div>
-      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-        How Bebop fits your process.
+    <div class="max-w-3xl mb-16 text-left">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 tracking-tight font-sans">
+        From local Markdown to multi-channel dispatch.
       </h2>
       <p class="text-stone-400 text-base sm:text-lg leading-relaxed">
-        From early outline to multi-platform delivery in three coordinated steps.
+        A single deterministic pipeline that connects your drafts, editorial reviews, and destination APIs.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
       {steps.map((item) => (
-        <div class="relative bg-[#141211] rounded-2xl border border-stone-800 p-8 flex flex-col justify-between hover:border-pink/40 hover:bg-[#181615] transition-all group">
+        <div class="relative bg-[#141211] rounded-2xl border border-stone-800 p-8 flex flex-col justify-between hover:border-stone-700 transition-all group">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-mono text-xs font-bold text-pink px-2.5 py-1 rounded-full bg-pink/15">
+              <span class="font-mono text-xs font-bold text-stone-400 px-2.5 py-1 rounded bg-stone-900 border border-stone-800">
                 {item.step}
               </span>
-              <div class="w-10 h-10 rounded-xl bg-[#1C1A18] border border-stone-700/80 flex items-center justify-center text-stone-300 group-hover:text-pink transition-colors shadow-2xs">
-                <item.icon class="w-5 h-5" />
+              <div class="w-9 h-9 rounded-lg bg-[#1C1A18] border border-stone-700/80 flex items-center justify-center text-stone-300">
+                <item.icon class="w-4 h-4" />
               </div>
             </div>
-            <h3 class="text-lg font-bold text-white mb-2.5">
+            <h3 class="text-lg font-bold text-white mb-2.5 font-sans">
               {item.title}
             </h3>
-            <p class="text-sm text-stone-400 leading-relaxed">
+            <p class="text-sm text-stone-400 leading-relaxed font-sans">
               {item.description}
             </p>
           </div>

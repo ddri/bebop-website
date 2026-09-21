@@ -1,146 +1,125 @@
 ---
-import { FolderKanban, Share2, Users, Clock, CircleCheck } from '@lucide/astro';
 ---
 
 <section id="features" class="w-full py-24 border-t border-stone-800/80 bg-[#0A0908]">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-900 border border-stone-800 text-stone-300 text-xs font-semibold uppercase tracking-wider mb-4">
-        Platform Capabilities
-      </div>
-      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-        Everything you need to orchestrate campaigns.
+    <div class="max-w-3xl mb-16 text-left">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 tracking-tight font-sans">
+        Built for the actual mechanics of technical publishing.
       </h2>
       <p class="text-stone-400 text-base sm:text-lg leading-relaxed">
-        Stop juggling four tabs, broken canonical tags, and messy copy-pasting. Bebop treats publishing as a coordinated team workflow.
+        Buffer and Hootsuite don't understand Markdown, syntax highlighting, or canonical tags. Bebop is built specifically for developer blogs, newsletters, and launch weeks.
       </p>
     </div>
 
     <!-- Bento Grid -->
     <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-      <!-- Bento 1: Campaign-First (7 cols) -->
-      <div class="md:col-span-7 bg-[#141211] rounded-2xl border border-stone-800/90 p-8 shadow-xs flex flex-col justify-between overflow-hidden relative group">
+      <!-- Bento 1: Canonical SEO (7 cols) -->
+      <div class="md:col-span-7 bg-[#141211] rounded-2xl border border-stone-800 p-8 flex flex-col justify-between overflow-hidden">
         <div class="mb-6">
-          <div class="w-10 h-10 rounded-xl bg-pink/15 text-pink flex items-center justify-center mb-5">
-            <FolderKanban class="w-5 h-5" />
+          <div class="text-xs font-mono font-semibold text-pink uppercase tracking-wider mb-3">
+            SEO & Distribution
           </div>
-          <h3 class="text-xl font-bold text-white mb-2">Campaign-First Architecture</h3>
-          <p class="text-sm text-stone-400 leading-relaxed max-w-md">
-            Organize articles, release notes, and social threads around unified launch goals. Coordinate publishing as one sequence rather than scattered standalone posts.
+          <h3 class="text-xl font-bold text-white mb-2">Automatic Canonical URL Preservation</h3>
+          <p class="text-sm text-stone-400 leading-relaxed max-w-lg">
+            Cross-posting to Dev.to and Hashnode shouldn't cannibalize your primary blog's Google ranking. Bebop automatically compiles and verifies canonical link headers across every platform payload.
           </p>
         </div>
 
-        <!-- Micro UI Widget: Mini Campaign Sequence -->
-        <div class="bg-[#181615] rounded-xl border border-stone-800 p-4 space-y-2.5 font-sans">
-          <div class="flex items-center justify-between text-xs text-stone-400 pb-2 border-b border-stone-800 font-medium">
-            <span>Campaign: Q3 Launch Week</span>
-            <span class="text-emerald-400 font-semibold">2 of 3 Ready</span>
+        <!-- Technical Code Diff Box -->
+        <div class="bg-[#0D0B0A] rounded-xl border border-stone-800 p-4 font-mono text-xs space-y-2">
+          <div class="flex items-center justify-between text-[11px] text-stone-500 pb-2 border-b border-stone-800/80">
+            <span>Payload Target: Dev.to API</span>
+            <span class="text-emerald-400 font-semibold">Canonical Verified</span>
           </div>
-
-          <div class="flex items-center justify-between p-2.5 bg-[#201D1A] rounded-lg border border-stone-800/80 text-xs">
-            <div class="flex items-center gap-2">
-              <CircleCheck class="w-4 h-4 text-emerald-400" />
-              <span class="font-medium text-stone-200">Part 1: The Vision & Architecture</span>
-            </div>
-            <span class="text-[11px] px-2 py-0.5 rounded bg-stone-800 text-stone-400 font-medium">Published</span>
-          </div>
-
-          <div class="flex items-center justify-between p-2.5 bg-[#201D1A] rounded-lg border border-pink/50 text-xs shadow-2xs">
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-pink animate-pulse"></span>
-              <span class="font-medium text-stone-100">Part 2: Technical Deep Dive</span>
-            </div>
-            <span class="text-[11px] px-2 py-0.5 rounded bg-pink/20 text-pink font-semibold">In Review</span>
+          <div class="text-[11px] text-stone-300">
+            <span class="text-stone-500">// Auto-injected destination frontmatter</span><br />
+            <span class="text-pink">canonical_url</span>: <span class="text-emerald-300">"https://yourdomain.dev/blog/launch"</span><br />
+            <span class="text-pink">published</span>: <span class="text-amber-300">true</span><br />
+            <span class="text-pink">series</span>: <span class="text-sky-300">"Release Week 2026"</span>
           </div>
         </div>
       </div>
 
-      <!-- Bento 2: Publish Everywhere (5 cols) -->
-      <div class="md:col-span-5 bg-[#141211] rounded-2xl border border-stone-800/90 p-8 shadow-xs flex flex-col justify-between">
+      <!-- Bento 2: Thread Splitting (5 cols) -->
+      <div class="md:col-span-5 bg-[#141211] rounded-2xl border border-stone-800 p-8 flex flex-col justify-between">
         <div class="mb-6">
-          <div class="w-10 h-10 rounded-xl bg-blue-950/60 border border-blue-800/50 text-blue-400 flex items-center justify-center mb-5">
-            <Share2 class="w-5 h-5" />
+          <div class="text-xs font-mono font-semibold text-sky-400 uppercase tracking-wider mb-3">
+            Social & Federated
           </div>
-          <h3 class="text-xl font-bold text-white mb-2">Publish Everywhere</h3>
+          <h3 class="text-xl font-bold text-white mb-2">Markdown Thread Splitting</h3>
           <p class="text-sm text-stone-400 leading-relaxed">
-            Write once in Markdown. Automatic frontmatter translation and canonical URL preservation across developer & federated channels.
+            Turn deep technical articles into native Bluesky and Mastodon threads without manual copy-pasting. Splits on headings and paragraphs while maintaining context.
           </p>
         </div>
 
-        <!-- Platform Pills Grid -->
-        <div class="grid grid-cols-2 gap-2 text-xs font-medium text-stone-300">
-          <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#181615] border border-stone-800/90">
-            <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-            <span>Hashnode</span>
+        <div class="space-y-2 font-mono text-[11px]">
+          <div class="p-3 rounded-lg bg-[#0D0B0A] border border-stone-800 text-stone-300 flex items-center justify-between">
+            <span class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+              <span>Bluesky: AT Protocol Post 1/3</span>
+            </span>
+            <span class="text-[10px] text-stone-500">284 / 300 chars</span>
           </div>
-          <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#181615] border border-stone-800/90">
-            <span class="w-2 h-2 rounded-full bg-stone-300"></span>
-            <span>Dev.to</span>
-          </div>
-          <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#181615] border border-stone-800/90">
-            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
-            <span>Bluesky</span>
-          </div>
-          <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#181615] border border-stone-800/90">
-            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            <span>Mastodon</span>
+          <div class="p-3 rounded-lg bg-[#0D0B0A] border border-stone-800 text-stone-300 flex items-center justify-between">
+            <span class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+              <span>Mastodon: Status with CW tags</span>
+            </span>
+            <span class="text-[10px] text-stone-500">410 / 500 chars</span>
           </div>
         </div>
       </div>
 
-      <!-- Bento 3: Real-Time Multiplayer (5 cols) -->
-      <div class="md:col-span-5 bg-[#141211] rounded-2xl border border-stone-800/90 p-8 shadow-xs flex flex-col justify-between">
+      <!-- Bento 3: Campaign Graph (5 cols) -->
+      <div class="md:col-span-5 bg-[#141211] rounded-2xl border border-stone-800 p-8 flex flex-col justify-between">
         <div class="mb-6">
-          <div class="w-10 h-10 rounded-xl bg-emerald-950/60 border border-emerald-800/50 text-emerald-400 flex items-center justify-center mb-5">
-            <Users class="w-5 h-5" />
+          <div class="text-xs font-mono font-semibold text-emerald-400 uppercase tracking-wider mb-3">
+            Campaign Architecture
           </div>
-          <h3 class="text-xl font-bold text-white mb-2">Real-Time Multiplayer</h3>
+          <h3 class="text-xl font-bold text-white mb-2">Campaign-First Rollouts</h3>
           <p class="text-sm text-stone-400 leading-relaxed">
-            Co-write campaigns with presence, live typing cursors, and inline suggestions. No merge conflicts, no overwritten drafts.
+            Launches are multi-day sequences, not isolated blog posts. Coordinate announcement posts, deep-dives, benchmark releases, and newsletter recaps in one graph.
           </p>
         </div>
 
-        <!-- Collaborators Stack Widget -->
-        <div class="p-3.5 bg-[#181615] rounded-xl border border-stone-800 flex items-center justify-between">
-          <div class="flex items-center -space-x-2">
-            <span class="w-8 h-8 rounded-full bg-pink text-white flex items-center justify-center text-xs font-bold border-2 border-[#181615] shadow-2xs">DR</span>
-            <span class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-bold border-2 border-[#181615] shadow-2xs">SC</span>
-            <span class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center text-xs font-bold border-2 border-[#181615] shadow-2xs">LM</span>
+        <div class="p-3.5 bg-[#0D0B0A] rounded-xl border border-stone-800 font-mono text-[11px] text-stone-300 space-y-1.5">
+          <div class="flex items-center justify-between">
+            <span class="text-stone-400">01. Announcement Blog</span>
+            <span class="text-emerald-400">&check; Live</span>
           </div>
-          <span class="text-xs font-medium text-stone-400 flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            3 collaborators editing
-          </span>
+          <div class="flex items-center justify-between">
+            <span class="text-stone-400">02. Architecture Deep Dive</span>
+            <span class="text-pink font-semibold">&bull; Active</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-stone-400">03. Newsletter Recap (Beehiiv)</span>
+            <span class="text-amber-400">Scheduled</span>
+          </div>
         </div>
       </div>
 
-      <!-- Bento 4: Smart Scheduling (7 cols) -->
-      <div class="md:col-span-7 bg-[#141211] rounded-2xl border border-stone-800/90 p-8 shadow-xs flex flex-col justify-between">
+      <!-- Bento 4: Resilient Delivery Queue (7 cols) -->
+      <div class="md:col-span-7 bg-[#141211] rounded-2xl border border-stone-800 p-8 flex flex-col justify-between">
         <div class="mb-6">
-          <div class="w-10 h-10 rounded-xl bg-purple-950/60 border border-purple-800/50 text-purple-400 flex items-center justify-center mb-5">
-            <Clock class="w-5 h-5" />
+          <div class="text-xs font-mono font-semibold text-purple-400 uppercase tracking-wider mb-3">
+            Reliability & Queues
           </div>
-          <h3 class="text-xl font-bold text-white mb-2">Intelligent Schedule & Delivery</h3>
-          <p class="text-sm text-stone-400 leading-relaxed max-w-md">
-            Queue posts across staggered release windows. Automated exponential backoff handles platform rate-limits so your posts never get dropped.
+          <h3 class="text-xl font-bold text-white mb-2">Automated Retry Queue & Rate Limiting</h3>
+          <p class="text-sm text-stone-400 leading-relaxed max-w-lg">
+            Third-party platform APIs fail, timeout, and hit rate limits unpredictably. Bebop's queue worker handles automated backoff, token refreshing, and failure alerting.
           </p>
         </div>
 
-        <!-- Queue Status Matrix -->
-        <div class="bg-[#181615] rounded-xl border border-stone-800 p-4 font-sans text-xs">
-          <div class="flex items-center justify-between text-stone-400 font-medium mb-2.5">
-            <span>Scheduled Release Window</span>
-            <span class="text-stone-200">Tuesday · 09:00 UTC</span>
+        <div class="bg-[#0D0B0A] rounded-xl border border-stone-800 p-4 font-mono text-xs">
+          <div class="flex items-center justify-between text-stone-400 mb-2">
+            <span>Publishing Queue Worker</span>
+            <span class="text-emerald-400 text-[11px]">Worker ID: pub-worker-01</span>
           </div>
-          <div class="w-full bg-stone-800 rounded-full h-2 overflow-hidden flex">
-            <div class="bg-emerald-500 h-2 w-2/3"></div>
-            <div class="bg-amber-400 h-2 w-1/6"></div>
-            <div class="bg-stone-700 h-2 w-1/6"></div>
-          </div>
-          <div class="flex items-center justify-between text-[11px] text-stone-500 mt-2 font-mono">
-            <span>2 Dispatched</span>
-            <span>1 Queued</span>
-            <span>0 Failed</span>
+          <div class="flex items-center justify-between text-[11px] text-stone-400 py-1.5 border-t border-stone-800/80">
+            <span>Active Queue: 0 backlog</span>
+            <span>Retries: 0 errors</span>
+            <span>Status: Healthy</span>
           </div>
         </div>
       </div>
