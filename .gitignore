@@ -45,6 +45,7 @@ yarn-error.log*
 
 # Playwright MCP artifacts
 .playwright-mcp/
+bebop-astro7-full.png
 
 # TypeScript
 *.tsbuildinfo
