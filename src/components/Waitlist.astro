@@ -2,81 +2,102 @@
 import { Mail, User, MessageSquare } from '@lucide/astro';
 ---
 
-<section id="waitlist" class="w-full py-20 bg-[hsl(348,30%,97%)]">
-  <div class="container mx-auto max-w-xl">
-    <h2 class="text-3xl font-bold text-center mb-4">Get Early Access</h2>
-    <p class="text-center text-gray-600 mb-8">
-      Bebop is currently in early access. Join the waitlist and we'll send you an invite when your spot is ready.
-    </p>
+<section id="waitlist" class="w-full py-24 bg-[#0C0A09] border-t border-stone-800/80 relative overflow-hidden">
+  <!-- Subtle ambient glow -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-pink/15 blur-[120px] pointer-events-none -z-10 rounded-full"></div>
 
-    <form id="waitlist-form" class="space-y-4">
-      <!-- Honeypot field — hidden from real users, filled by bots -->
-      <div class="absolute opacity-0 top-0 left-0 h-0 w-0 -z-10 overflow-hidden" aria-hidden="true">
-        <label for="waitlist-website">Website</label>
-        <input type="text" id="waitlist-website" name="website" tabindex="-1" autocomplete="off" />
+  <div class="max-w-xl mx-auto px-6">
+    <div class="bg-[#141211] rounded-3xl border border-stone-800 p-8 sm:p-10 shadow-xl relative">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-white mb-2.5 font-sans tracking-tight">
+          Request access to Bebop Cloud.
+        </h2>
+        <p class="text-stone-400 text-sm leading-relaxed">
+          Want managed multiplayer sync, automated background publishing, and zero server maintenance? We're onboarding technical teams in weekly cohorts. (Prefer to self-host? Grab the open source core on <a href="https://github.com/ddri/bebop" target="_blank" rel="noopener noreferrer" class="text-white underline underline-offset-2 hover:text-pink transition-colors">GitHub</a>).
+        </p>
       </div>
 
-      <div>
-        <label for="waitlist-name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-        <div class="relative">
-          <User class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-          <input
-            type="text"
-            id="waitlist-name"
-            name="name"
-            required
-            placeholder="Your name"
-            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent"
-          />
+      <form id="waitlist-form" class="space-y-4 font-sans">
+        <!-- Honeypot field — hidden from real users, filled by bots -->
+        <div class="absolute opacity-0 top-0 left-0 h-0 w-0 -z-10 overflow-hidden" aria-hidden="true">
+          <label for="waitlist-website">Website</label>
+          <input type="text" id="waitlist-website" name="website" tabindex="-1" autocomplete="off" />
         </div>
-      </div>
 
-      <div>
-        <label for="waitlist-email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-        <div class="relative">
-          <Mail class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-          <input
-            type="email"
-            id="waitlist-email"
-            name="email"
-            required
-            placeholder="you@example.com"
-            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent"
-          />
+        <div>
+          <label for="waitlist-name" class="block text-xs font-semibold text-stone-300 uppercase tracking-wider mb-1.5">
+            Your Name
+          </label>
+          <div class="relative">
+            <User class="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-stone-500" />
+            <input
+              type="text"
+              id="waitlist-name"
+              name="name"
+              required
+              placeholder="Alex Chen"
+              class="w-full pl-10 pr-4 py-2.5 bg-[#181615] border border-stone-700/80 rounded-xl text-stone-100 text-sm placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-pink/50 focus:border-pink transition-all"
+            />
+          </div>
         </div>
-      </div>
 
-      <div>
-        <label for="waitlist-reason" class="block text-sm font-medium text-gray-700 mb-1">
-          What are you hoping to use Bebop for? <span class="text-gray-400">(optional)</span>
-        </label>
-        <div class="relative">
-          <MessageSquare class="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-          <textarea
-            id="waitlist-reason"
-            name="reason"
-            rows="3"
-            placeholder="Tell us about your content workflow..."
-            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-          ></textarea>
+        <div>
+          <label for="waitlist-email" class="block text-xs font-semibold text-stone-300 uppercase tracking-wider mb-1.5">
+            Work or Personal Email
+          </label>
+          <div class="relative">
+            <Mail class="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-stone-500" />
+            <input
+              type="email"
+              id="waitlist-email"
+              name="email"
+              required
+              placeholder="alex@example.com"
+              class="w-full pl-10 pr-4 py-2.5 bg-[#181615] border border-stone-700/80 rounded-xl text-stone-100 text-sm placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-pink/50 focus:border-pink transition-all"
+            />
+          </div>
         </div>
+
+        <div>
+          <label for="waitlist-reason" class="block text-xs font-semibold text-stone-300 uppercase tracking-wider mb-1.5">
+            What are you planning to publish? <span class="text-stone-500 font-normal lowercase">(optional)</span>
+          </label>
+          <div class="relative">
+            <MessageSquare class="absolute left-3.5 top-3.5 h-4 w-4 text-stone-500" />
+            <textarea
+              id="waitlist-reason"
+              name="reason"
+              rows="3"
+              placeholder="e.g. Engineering blog, newsletter cross-posts, dev marketing..."
+              class="w-full pl-10 pr-4 py-2.5 bg-[#181615] border border-stone-700/80 rounded-xl text-stone-100 text-sm placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-pink/50 focus:border-pink transition-all resize-none"
+            ></textarea>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          id="waitlist-submit"
+          class="w-full inline-flex items-center justify-center rounded-xl text-sm font-semibold h-11 px-6 bg-white text-stone-950 hover:bg-stone-200 transition-all shadow-md cursor-pointer"
+        >
+          Join Bebop Cloud Early Access
+        </button>
+
+        <p class="text-[11px] text-center text-stone-500 pt-1">
+          No spam. Your email will strictly be used for your invitation.
+        </p>
+
+        <p id="waitlist-error" class="text-rose-400 text-xs text-center hidden"></p>
+      </form>
+
+      <div id="waitlist-success" class="hidden text-center py-10">
+        <div class="w-12 h-12 rounded-full bg-emerald-950/70 border border-emerald-800 text-emerald-400 flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+          ✓
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">You're on the list!</h3>
+        <p class="text-stone-400 text-sm max-w-sm mx-auto leading-relaxed">
+          We've received your request. We'll send your invite code directly to your inbox as spots open.
+        </p>
       </div>
-
-      <button
-        type="submit"
-        id="waitlist-submit"
-        class="w-full inline-flex items-center justify-center rounded-md text-sm font-medium h-11 px-8 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-      >
-        Join the Waitlist
-      </button>
-
-      <p id="waitlist-error" class="text-red-600 text-sm text-center hidden"></p>
-    </form>
-
-    <div id="waitlist-success" class="hidden text-center py-8">
-      <div class="text-4xl mb-4">&#10003;</div>
-      <h3 class="text-xl font-semibold mb-2">You're on the list!</h3>
-      <p class="text-gray-600">We'll send you an invite when your spot is ready. Keep an eye on your inbox.</p>
     </div>
   </div>
 </section>
