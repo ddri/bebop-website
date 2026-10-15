@@ -3,28 +3,43 @@ import Analytics from '@vercel/analytics/astro';
 
 export interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
+const defaultDescription = "The open-source campaign CMS for technical content creators and DevRel teams. Plan multi-day launches in Markdown and cross-publish to Hashnode, Dev.to, Beehiiv, Bluesky, and Mastodon with canonical URLs intact.";
+const metaDescription = description || defaultDescription;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site || 'https://bebopcms.com').href;
+const ogImageUrl = new URL('/og-image.png', Astro.site || 'https://bebopcms.com').href;
 ---
 
 <!DOCTYPE html>
 <html lang="en" class="dark" style="color-scheme: dark;">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Bebop is a content marketing platform for creators and teams. Create campaigns, collaborate in real time, and publish everywhere." />
+    <meta name="description" content={metaDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0C0A09" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="canonical" href={Astro.url.href} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:title" content={title} />
-    <meta property="og:description" content="Bebop is a content marketing platform for creators and teams. Create campaigns, collaborate in real time, and publish everywhere." />
+    <meta property="og:description" content={metaDescription} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content="Bebop is a content marketing platform for creators and teams. Create campaigns, collaborate in real time, and publish everywhere." />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
     <title>{title}</title>
   </head>
   <body>
