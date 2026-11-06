@@ -1,58 +1,214 @@
 ---
 ---
 
-<section class="relative w-full py-32 bg-dark-grey text-white overflow-hidden">
-  <!-- Base color layer -->
-  <div
-    class="absolute inset-0"
-    style="background-color: hsl(348, 30%, 75%);"
-  ></div>
+<section class="relative w-full pt-16 pb-24 overflow-hidden">
+  <div class="absolute inset-0 texture-dots pointer-events-none -z-10"></div>
 
-  <!-- Texture layers -->
-  <div class="absolute inset-0 texture-noise mix-blend-overlay"></div>
-  <div
-    class="absolute inset-0 opacity-10"
-    style="
-      background-image:
-        radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.1) 0%, transparent 2%),
-        radial-gradient(circle at 0% 0%, rgba(0, 0, 0, 0.1) 0%, transparent 2%),
-        radial-gradient(circle at 100% 0%, rgba(0, 0, 0, 0.1) 0%, transparent 2%),
-        radial-gradient(circle at 0% 100%, rgba(0, 0, 0, 0.1) 0%, transparent 2%),
-        radial-gradient(circle at 100% 100%, rgba(0, 0, 0, 0.1) 0%, transparent 2%);
-      background-size: 40px 40px, 40px 40px, 40px 40px, 40px 40px, 40px 40px;
-      background-position: 0 0, 20px 20px, -20px 20px, 20px -20px, -20px -20px;
-    "
-  ></div>
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <!-- Release & License Bar -->
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-stone-800 bg-[#12100E] text-xs text-stone-300 mb-8 font-mono">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+      <span class="text-stone-200 font-semibold">Bebop v0.3.5</span>
+      <span class="text-stone-600">|</span>
+      <span>Free & Open Source Core (AGPL-3.0)</span>
+      <span class="text-stone-600">|</span>
+      <a href="https://github.com/ddri/bebop" target="_blank" rel="noopener noreferrer" class="text-pink hover:underline">
+        GitHub &rarr;
+      </a>
+    </div>
 
-  <!-- Content -->
-  <div class="container mx-auto text-center relative z-10">
-    <a href="https://github.com/ddri/bebop/releases/tag/v0.3.5">
-      <div class="inline-flex items-center gap-2 bg-dark-grey/10 px-4 py-1 rounded-full text-dark-grey text-sm mb-6">
-        <span class="font-medium">v0.3.5 is now available</span>
-        <span class="text-dark-grey/60">→</span>
-      </div>
-    </a>
-    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-dark-grey leading-tight">
-      Your content campaigns, one place.
+    <!-- Headline & Subtitle -->
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.12] mb-6 max-w-4xl mx-auto font-sans tracking-tight">
+      The campaign CMS for <br class="hidden sm:inline" />
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-stone-100 via-stone-200 to-stone-400 font-serif italic font-normal">technical content teams.</span>
     </h1>
-    <p class="text-xl mb-8 max-w-2xl mx-auto text-dark-grey leading-relaxed">
-      Create, schedule, and publish across platforms — from one editor.
-      Bebop is a content marketing platform for creators and teams who publish everywhere.
+
+    <p class="text-lg sm:text-xl text-stone-400 max-w-3xl mx-auto leading-relaxed mb-8 font-sans">
+      Plan multi-day launches in Markdown. Automatically format, schedule, and cross-publish across Hashnode, Dev.to, Beehiiv, Bluesky, and Mastodon with canonical URLs intact.
     </p>
-    <div class="flex gap-4 justify-center">
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row gap-3.5 justify-center items-center mb-4">
       <a
         href="#waitlist"
-        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 h-11 px-8 bg-dark-grey text-white hover:bg-dark-grey/90"
+        class="w-full sm:w-auto inline-flex items-center justify-center rounded-full text-sm font-semibold tracking-wide bg-white text-stone-950 hover:bg-stone-200 shadow-sm h-11 px-7 transition-all group"
       >
-        Request Access
+        <span>Deploy to Bebop Cloud</span>
+        <span class="ml-1.5 group-hover:translate-x-0.5 transition-transform">&rarr;</span>
       </a>
+
       <a
         href="https://github.com/ddri/bebop"
-        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 h-11 px-8 gap-2 border border-dark-grey/30 text-dark-grey hover:bg-dark-grey/10"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full sm:w-auto inline-flex items-center justify-center rounded-full text-sm font-medium border border-stone-800 bg-[#141211] text-stone-300 hover:bg-stone-800 hover:text-white h-11 px-6 shadow-2xs transition-colors gap-2"
       >
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        View on GitHub
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        <span>Self-Host on GitHub</span>
+        <span class="text-stone-600">·</span>
+        <span class="text-stone-400 text-xs font-mono">AGPLv3</span>
       </a>
+    </div>
+
+    <p class="text-xs text-stone-500 max-w-xl mx-auto mb-12 font-mono">
+      docker compose up -d &bull; Postgres &bull; Redis &bull; No vendor telemetry
+    </p>
+
+    <!-- Technical Orchestrator Interface Showcase -->
+    <div class="relative mx-auto max-w-5xl text-left font-mono">
+      <div class="rounded-xl border border-stone-800 bg-[#100E0D] editor-frame-shadow overflow-hidden">
+        <!-- Workbench Toolbar -->
+        <div class="h-10 bg-[#161413] border-b border-stone-800 px-4 flex items-center justify-between text-xs select-none">
+          <div class="flex items-center gap-3">
+            <span class="font-bold text-stone-200 tracking-wider">BEBOP ORCHESTRATOR</span>
+            <span class="text-stone-600">/</span>
+            <span class="text-stone-400">campaign: <span class="text-pink">q3-infrastructure-launch</span></span>
+          </div>
+          <div class="hidden sm:flex items-center gap-4 text-[11px] text-stone-400">
+            <span class="flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 2 of 3 Dispatched
+            </span>
+            <span class="text-stone-600">|</span>
+            <span>Target Matrix: 4 Platforms</span>
+          </div>
+        </div>
+
+        <!-- Main Studio Grid -->
+        <div class="grid grid-cols-12 min-h-[400px] text-xs divide-y md:divide-y-0 md:divide-x divide-stone-800">
+          <!-- Column 1: Campaign Graph (3 cols) -->
+          <div class="col-span-12 md:col-span-3 bg-[#0D0B0A] p-4 space-y-4">
+            <div class="text-[10px] font-bold text-stone-400 uppercase tracking-widest">
+              Release Sequence
+            </div>
+
+            <div class="space-y-2">
+              <div class="p-2.5 rounded-md bg-[#161413] border border-stone-800/80">
+                <div class="flex items-center justify-between text-[10px] text-stone-500 mb-1">
+                  <span>DAY 01</span>
+                  <span class="text-emerald-400 font-semibold">DISPATCHED</span>
+                </div>
+                <div class="font-medium text-stone-200 truncate">01-vision-and-core.md</div>
+                <div class="text-[10px] text-stone-500 mt-1">Hashnode &bull; Dev.to &bull; Bluesky</div>
+              </div>
+
+              <div class="p-2.5 rounded-md bg-[#1A1614] border border-pink/50">
+                <div class="flex items-center justify-between text-[10px] text-pink mb-1 font-semibold">
+                  <span>DAY 02 (ACTIVE)</span>
+                  <span class="text-amber-400">READY</span>
+                </div>
+                <div class="font-medium text-stone-100 truncate">02-distributed-queue.md</div>
+                <div class="text-[10px] text-stone-400 mt-1">All 4 destinations queued</div>
+              </div>
+
+              <div class="p-2.5 rounded-md bg-[#12100F] border border-stone-850 text-stone-500">
+                <div class="flex items-center justify-between text-[10px] text-stone-600 mb-1">
+                  <span>DAY 03</span>
+                  <span>PENDING</span>
+                </div>
+                <div class="font-medium text-stone-400 truncate">03-latency-benchmarks.md</div>
+                <div class="text-[10px] text-stone-600 mt-1">Scheduled for Thu 14:00</div>
+              </div>
+            </div>
+
+            <div class="pt-2 border-t border-stone-850">
+              <div class="text-[10px] text-stone-400 uppercase tracking-wider mb-1 font-semibold">Engine Pipeline</div>
+              <div class="text-[11px] text-stone-300 font-sans leading-relaxed">
+                Canonical URLs are computed from your primary blog domain and verified before dispatch.
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Markdown & Frontmatter Editor (6 cols) -->
+          <div class="col-span-12 md:col-span-6 bg-[#100E0D] p-5 flex flex-col justify-between">
+            <div class="space-y-3 font-mono text-[11px] leading-relaxed">
+              <div class="flex items-center justify-between pb-2 border-b border-stone-800 text-[10px] text-stone-400">
+                <span>FILE: content/campaigns/02-distributed-queue.md</span>
+                <span class="text-emerald-400">Markdown UTF-8</span>
+              </div>
+
+              <!-- Frontmatter block with syntax colors -->
+              <div class="p-3 rounded bg-[#0A0908] border border-stone-800/80 text-stone-300 font-mono text-[11px]">
+                <span class="text-stone-500">---</span><br />
+                <span class="text-pink">title</span>: <span class="text-emerald-300">"Inside the Distributed Content Queue"</span><br />
+                <span class="text-pink">canonical_url</span>: <span class="text-sky-300">"https://acme.dev/blog/distributed-queue"</span><br />
+                <span class="text-pink">tags</span>: <span class="text-amber-200">["architecture", "devrel", "queues"]</span><br />
+                <span class="text-pink">targets</span>:<br />
+                &nbsp;&nbsp;<span class="text-purple-300">hashnode</span>: &#123; <span class="text-stone-400">canonical: true, draft: false</span> &#125;<br />
+                &nbsp;&nbsp;<span class="text-purple-300">devto</span>: &#123; <span class="text-stone-400">series: "Q3 Launch", canonical: true</span> &#125;<br />
+                &nbsp;&nbsp;<span class="text-purple-300">beehiiv</span>: &#123; <span class="text-stone-400">newsletter_template: "deep-dive"</span> &#125;<br />
+                &nbsp;&nbsp;<span class="text-purple-300">bluesky</span>: &#123; <span class="text-stone-400">thread_split: "headings", max_posts: 4</span> &#125;<br />
+                <span class="text-stone-500">---</span>
+              </div>
+
+              <!-- Technical markdown excerpt -->
+              <div class="text-stone-300 pt-1">
+                <span class="text-stone-500">##</span> <span class="text-white font-bold">Why Cross-Posting Breaks Technical SEO</span><br />
+                When technical teams publish to Dev.to, Hashnode, and corporate blogs without automated canonical headers, Google splits page rank across scrapers. Bebop injects verified canonical tags directly into each platform payload...
+              </div>
+            </div>
+
+            <!-- Terminal status bar -->
+            <div class="mt-4 pt-3 border-t border-stone-800/80 flex items-center justify-between text-[10px] text-stone-500 font-mono">
+              <span>Branch: feat/launch-content</span>
+              <span class="text-stone-400">AST parser: OK &bull; Word count: 1,420</span>
+            </div>
+          </div>
+
+          <!-- Column 3: Multi-Platform Payload Inspector (3 cols) -->
+          <div class="col-span-12 md:col-span-3 bg-[#0D0B0A] p-4 space-y-3 font-mono">
+            <div class="text-[10px] font-bold text-stone-400 uppercase tracking-widest">
+              Destination Payload Status
+            </div>
+
+            <!-- Target 1: Hashnode -->
+            <div class="p-2.5 rounded bg-[#141211] border border-stone-800">
+              <div class="flex items-center justify-between text-[11px] font-semibold mb-1">
+                <span class="text-blue-400">Hashnode API</span>
+                <span class="text-[10px] text-emerald-400 bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/40">200 READY</span>
+              </div>
+              <div class="text-[10px] text-stone-400">Canonical: acme.dev/...</div>
+              <div class="text-[10px] text-stone-500 mt-0.5">Slug: /distributed-queue</div>
+            </div>
+
+            <!-- Target 2: Dev.to -->
+            <div class="p-2.5 rounded bg-[#141211] border border-stone-800">
+              <div class="flex items-center justify-between text-[11px] font-semibold mb-1">
+                <span class="text-stone-200">Dev.to API</span>
+                <span class="text-[10px] text-emerald-400 bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/40">VERIFIED</span>
+              </div>
+              <div class="text-[10px] text-stone-400">Canonical tag matched</div>
+              <div class="text-[10px] text-stone-500 mt-0.5">Series: Q3 Launch Week</div>
+            </div>
+
+            <!-- Target 3: Beehiiv -->
+            <div class="p-2.5 rounded bg-[#141211] border border-stone-800">
+              <div class="flex items-center justify-between text-[11px] font-semibold mb-1">
+                <span class="text-amber-400">Beehiiv Newsletter</span>
+                <span class="text-[10px] text-amber-400 bg-amber-950/60 px-1.5 py-0.5 rounded border border-amber-800/40">QUEUED</span>
+              </div>
+              <div class="text-[10px] text-stone-400">HTML email generated</div>
+              <div class="text-[10px] text-stone-500 mt-0.5">Scheduled for Thu 09:00</div>
+            </div>
+
+            <!-- Target 4: Bluesky -->
+            <div class="p-2.5 rounded bg-[#141211] border border-stone-800">
+              <div class="flex items-center justify-between text-[11px] font-semibold mb-1">
+                <span class="text-sky-400">Bluesky AT Protocol</span>
+                <span class="text-[10px] text-sky-400 bg-sky-950/60 px-1.5 py-0.5 rounded border border-sky-800/40">3 POSTS</span>
+              </div>
+              <div class="text-[10px] text-stone-400">Thread split validated</div>
+              <div class="text-[10px] text-stone-500 mt-0.5">Root post + 2 replies</div>
+            </div>
+
+            <!-- Trigger Action Button -->
+            <div class="pt-2">
+              <div class="w-full py-2 px-3 rounded bg-white text-stone-950 text-center font-bold text-xs hover:bg-stone-200 transition-colors cursor-pointer font-sans">
+                Execute Dispatch (All 4)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
